@@ -2,6 +2,9 @@
 #ifndef FT_LIBFT_H
 # define FT_LIBFT_H
 
+#include <unistd.h>
+#include <stdlib.h>
+
 typedef unsigned int size_t;
 
 typedef struct		s_list
