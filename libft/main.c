@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 		return(0);
 	argc = 0;
-	ft_putstr(mot);
 	ft_putchar('\n');
+	ft_putstr(mot);
 	return (0);
 }
