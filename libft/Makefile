@@ -1,6 +1,6 @@
 SRC = ft_toupper.c \
       ft_tolower.c \
-      ft_strstrim.c \
+      ft_strtrim.c \
       ft_strsub.c \
       ft_strstr.c \
       ft_strsplit.c \
@@ -59,7 +59,7 @@ SRC = ft_toupper.c \
 
 SRCO = ft_toupper.o \
        ft_tolower.o \
-       ft_strstrim.o \
+       ft_strtrim.o \
        ft_strsub.o \
        ft_strstr.o \
        ft_strsplit.o \
@@ -125,5 +125,5 @@ FLAG = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}:
-	gcc ${FLAG} -c -I ${INCLUDES} $(SRC) main.c
+	gcc ${FLAG} -c ${INCLUDES} $(SRC) main.c
 	gcc ${NAME} ${SRCO} main .o
