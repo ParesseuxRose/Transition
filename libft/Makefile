@@ -126,4 +126,7 @@ all: ${NAME}
 
 ${NAME}:
 	gcc ${FLAG} -c ${INCLUDES} $(SRC) main.c
-	gcc ${NAME} ${SRCO} main .o
+	gcc ${NAME} ${SRCO} main.o
+
+clean:
+	/bin/rm -f ${SRCO}
