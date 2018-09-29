@@ -2,8 +2,8 @@
 #ifndef FT_LIBFT_H
 # define FT_LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {

@@ -114,7 +114,7 @@ SRCO = ft_toupper.o \
        ft_isalpha.o \
        ft_isalnum.o \
        ft_bzero.o \
-       ft_atoi.o
+       ft_atoi.o 
 
 NAME = libft
 
@@ -130,3 +130,9 @@ ${NAME}:
 
 clean:
 	/bin/rm -f ${SRCO}
+	/bin/rm -f libft.h.gch
+
+fclean: clean
+	/bin/rm -f ${NAME}
+
+re: clean fclean all
