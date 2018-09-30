@@ -2,12 +2,13 @@
 
 int main(int argc, char *argv[])
 {
-	const char *mot = argv[1];
+//	const char *mot = argv[1];
 	if (argc < 2)
 		return(0);
 	argc = 0;
-	ft_putstr(mot);
-	ft_putchar('\n');
+	argv[0] = "main";
+//	ft_putstr(mot);
+//	ft_putchar('\n');
 /*	
 	if (ft_isalpha(mot[0]))
 		ft_putstr("isalpha : ok\n");
@@ -31,9 +32,9 @@ int main(int argc, char *argv[])
 		ft_putstr("isprint : not ok\n");
 */
 //	ft_putstr(ft_strstr(argv[1], argv[2]));
-	ft_putnbr(ft_atoi(argv[3]));
-	ft_putchar('\n');
-	if(ft_strcmp(argv[1], argv[2]) == 0)
+//	ft_putnbr(ft_atoi(argv[3]));
+//	ft_putchar('\n');
+/*	if(ft_strcmp(argv[1], argv[2]) == 0)
 		ft_putstr("strcmp : ok\n");
 	else
 		ft_putstr("strcmp : not ok\n");
@@ -41,7 +42,23 @@ int main(int argc, char *argv[])
 		ft_putstr("strncmp : ok\n");
 	else
 		ft_putstr("strncmp : not ok\n");
+*/		
+
+//	ft_putstr(ft_strncpy(argv[1], argv[2], ft_atoi(argv[3])));
+//	ft_putchar('\n');
+
+/*	if(ft_strnequ(argv[1], argv[2], ft_atoi(argv[3])) == 1)
+		ft_putstr("strnequ : ok\n");
+	else
+		ft_putstr("strnequ : not ok\n");
+	if(ft_strequ(argv[1], argv[2]) == 1)
+		ft_putstr("strequ : ok\n");
+	else
+		ft_putstr("strequ : not ok\n");
+*/
+
 	
+
 
 	return (0);
 }

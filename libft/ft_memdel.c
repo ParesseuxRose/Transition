@@ -3,5 +3,5 @@
 
 void	ft_memdel(void **map)
 {
-
+	*map = NULL;
 }

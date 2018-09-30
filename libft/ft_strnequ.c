@@ -3,7 +3,7 @@
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && s1[i] != '\0' && s2[i] != '\0')
