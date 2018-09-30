@@ -118,19 +118,17 @@ SRCO = ft_toupper.o \
 
 NAME = libft
 
-INCLUDES = libft.h
-
 FLAG = -Wall -Wextra -Werror
 
 all: ${NAME}
 
 ${NAME}:
-	gcc ${FLAG} -c ${INCLUDES} $(SRC) main.c
-	gcc ${NAME} ${SRCO} main.o
+	gcc ${FLAG} -c $(SRC) main.c
+	gcc -o ${NAME} ${SRCO} main.o
 
 clean:
 	/bin/rm -f ${SRCO}
-	/bin/rm -f libft.h.gch
+	/bin/rm -f main.o
 
 fclean: clean
 	/bin/rm -f ${NAME}

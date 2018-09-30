@@ -4,7 +4,9 @@ char	*ft_strtrim(char const *s)
 {
 	int	i;
 	char	*str;
+	int	y;
 
+	y = 0;
 	i = 0;
 	while (s[i] == ' ' && s[i] == '\n' && s[i] == '\t')
 		i++;
@@ -12,10 +14,10 @@ char	*ft_strtrim(char const *s)
 		return (0);
 	while (s[i] != ' ' && s[i] != '\t' && s[i] != '\n' && s[i] != '\0')
 	{
-		*str = s[i];
-		*(str++);
+		str[y] = s[i];
+		y++;
 		i++;
 	}
-	*str = '\0';
+	str[y] = '\0';
 	return (str);
 }	

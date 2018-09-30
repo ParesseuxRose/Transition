@@ -5,8 +5,13 @@ char	*ft_strstr(const char *str, const char *to_find)
 	int	i;
 	int	stop;
 	int	j;
+	char	*strstr;
+
+
 	stop = 1;
 	i = 0;
+	if ((strstr = (char*)malloc(sizeof(strstr) * ft_strlen(str) + 1)) == NULL)
+		return (0);
 	while (stop)
 	{
 		stop = 0;
@@ -17,6 +22,7 @@ char	*ft_strstr(const char *str, const char *to_find)
 		}
 		while (str[i] == to_find[j] && to_find[j] != '\0' && str[i] != '\0')
 		{
+			strstr[j] = str[i];
 			i++;
 			j++;
 		}
@@ -27,7 +33,9 @@ char	*ft_strstr(const char *str, const char *to_find)
 		}
 		else
 		{
-			return (str + i);
+			strstr[j] = '\0';
+			return (strstr);
 		}
 	}
+	return (strstr);
 }

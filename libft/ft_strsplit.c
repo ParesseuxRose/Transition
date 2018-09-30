@@ -3,13 +3,15 @@
 int	count_nb_mot(const char *str, char c)
 {
 	int	j;
+	int	i;
 
+	i = 0;
 	j = 0;
-	while (*str != '\0')
+	while (str[i] != '\0')
 	{
-		if (*str == c && *str + 1 != c)
+		if (str[i] == c && str[i + 1] != c)
 			j++;
-		*(str++);
+		i++;
 	}
 	return (j);
 }
@@ -17,12 +19,14 @@ int	count_nb_mot(const char *str, char c)
 int	count_nb_lettre(const char *str, char c)
 {
 	int	j;
+	int	i;
 
+	i = 0;
 	j = 0;
-	while (*str != c && *str != '\0')
+	while (str[i] != c && str[i] != '\0')
 	{
 		j++;
-		*str++;
+		i++;
 	}
 	return (j);
 }
