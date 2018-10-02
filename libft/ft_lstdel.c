@@ -9,8 +9,8 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	{
 		while (lst->next)
 		{
-			free(lst);
-			lst->next;
+			(*del)(lst->content, lst->content_size);
+			lst = lst->next;
 		}
 	}
 	*alst = lst;
