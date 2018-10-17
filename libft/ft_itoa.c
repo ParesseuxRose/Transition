@@ -22,19 +22,19 @@ char	*ft_itoa(int n)
 
 	cpt = 1;
 	i = 0;
-	if ((str = (char*)malloc(sizeof(str) * 10 + 1)) == NULL) // Taille de la chaine a calculer avant
+	if ((str = (char*)malloc(sizeof(str) * ft_count_nbr(n, cpt) + 1)) == NULL)
 		return (0);
 	if (n < 0)
 	{	
 		str[i] = '-';
+		i++;
 	}
 	while (n > 10)
 	{
 		n = n / 10;
 		cpt = cpt * 10;
 	}
-	i++;
-	str[i] = '9';
+	str[i] = n + 48;
 	i++;
 	str[i] = '\0';
 	return (str);
