@@ -8,5 +8,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	n = 0;
 	strsrc = (char*)src;
 	strdest = (char*)dest;
-	*strsrc = *strdest;
+	*strsrc = strdest[n];
+	return (strsrc);
 }
