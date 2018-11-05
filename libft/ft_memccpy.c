@@ -10,7 +10,7 @@ void	*ft_memccpy(void *dest, const void *src, int nb, size_t n)
 	strsrc = (char*)src;
 	i = 0;
 
-	while (strsrc[i] != nb && i < n)
+	while (strsrc[i] != nb && i < n && strsrc[i] != '\0')
 	{
 		strdest[i] = strsrc[i];
 		i++;

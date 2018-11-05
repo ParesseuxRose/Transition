@@ -3,16 +3,10 @@
 
 void	*ft_memalloc(size_t size)
 {
-	char	*str;
-	size_t	i;
+	void	*str;
 
-	i = 0;
-	if ((str = (char*)malloc(sizeof(str) * size + 1)) == NULL)
+	if ((str = (char*)malloc(sizeof(void) * size)) == NULL)
 		return (0);
-	while (i < size)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	ft_bzero(str, size);
 	return (str);
 }
