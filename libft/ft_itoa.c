@@ -1,15 +1,22 @@
 #include "libft.h"
 
-int	ft_count_nbr(int nb, int cpt)
+int	ft_count_nbr(int nb)
 {
 	unsigned int	i;
+	int		cpt;
 
-	i = nb;
+	cpt = 0;
 	if (nb < 0)
-		i = -nb;
-	if (i > 10)
 	{
-		ft_count_nbr(i / 10, cpt + 1);
+		i = -nb;
+		cpt++;
+	}
+	else
+		i = nb;
+	while (i > 10)
+	{
+		i = i / 10;
+		cpt++;
 	}
 	return (cpt);
 }
@@ -18,10 +25,25 @@ char	*ft_itoa(int n)
 {
 	int	i;
 	char	*str;
-	int	cpt;
-
-	cpt = 1;
+	int	y;
+	long	x;
+	
 	i = 0;
-	if ((str = (char*)malloc(sizeof(str) * ft_count_nbr(n, cpt) + 1)) == NULL)
+	y = ft_count_nbr(n);
+	if ((str = (char*)malloc(sizeof(str) * y + 1)) == NULL)
 		return (0);
+	x = n;
+	if (x < 0)
+	{
+		str[0] = '-';
+		x = -x;
+	}
+	while (x > 1)
+	{
+		str[y - i] = x % 10 + 48;
+		x = x / 10;
+		i++;
+	}
+	str[y + 1] = '\0';
+	return (str);
 }	
