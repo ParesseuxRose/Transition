@@ -57,78 +57,27 @@ SRC = ft_toupper.c \
       ft_bzero.c \
       ft_atoi.c
 
-SRCO = ft_toupper.o \
-       ft_tolower.o \
-       ft_strtrim.o \
-       ft_strsub.o \
-       ft_strstr.o \
-       ft_strsplit.o \
-       ft_strrchr.o \
-       ft_strnstr.o \
-       ft_strnew.o \
-       ft_strnequ.o \
-       ft_strncpy.o \
-       ft_strncmp.o \
-       ft_strncat.o \
-       ft_strmapi.o \
-       ft_strmap.o \
-       ft_strlen.o \
-       ft_strlcat.o \
-       ft_strjoin.o \
-       ft_striteri.o \
-       ft_striter.o \
-       ft_strequ.o \
-       ft_strdup.o \
-       ft_strdel.o \
-       ft_strcpy.o \
-       ft_strcmp.o \
-       ft_strclr.o \
-       ft_strchr.o \
-       ft_strcat.o \
-       ft_putstr_fd.o \
-       ft_putstr.o \
-       ft_putnbr_fd.o \
-       ft_putnbr.o \
-       ft_putendl_fd.o \
-       ft_putendl.o \
-       ft_putchar_fd.o \
-       ft_putchar.o \
-       ft_memset.o \
-       ft_memmove.o \
-       ft_memdel.o \
-       ft_memcpy.o \
-       ft_memcmp.o \
-       ft_memchr.o \
-       ft_memccpy.o \
-       ft_memalloc.o \
-       ft_lstnew.o \
-       ft_lstmap.o \
-       ft_lstiter.o \
-       ft_lstdelone.o \
-       ft_lstdel.o \
-       ft_lstadd.o \
-       ft_itoa.o \
-       ft_isprint.o \
-       ft_isdigit.o \
-       ft_isascii.o \
-       ft_isalpha.o \
-       ft_isalnum.o \
-       ft_bzero.o \
-       ft_atoi.o 
+SRCO = ${SRC:.c=.o}
 
-NAME = libft
+NAME = libft.a
 
 FLAG = -Wall -Wextra -Werror
 
 all: ${NAME}
 
 ${NAME}:
-	gcc ${FLAG} -c $(SRC) main.c
-	gcc -o ${NAME} ${SRCO} main.o
+	gcc ${FLAG} -c $(SRC)
+	ar rc ${NAME} ${SRCO}
+	ranlib ${NAME}
+
+
+so :
+	gcc -shared libft.so $(SRC)
+	ar rc libft.so ${SRCO}
+	ranlib libft.so
 
 clean:
 	/bin/rm -f ${SRCO}
-	/bin/rm -f main.o
 
 fclean: clean
 	/bin/rm -f ${NAME}
