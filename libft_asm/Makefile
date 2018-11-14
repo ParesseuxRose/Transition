@@ -1,11 +1,35 @@
-ft_puts : ft_puts.o
-	ld -o ft_puts ft_puts.o
+NAME = libft
 
-ft_puts.o : ft_puts.s
-		as -o ft_puts.o ft_puts.s
+
+SRC =	ft_puts.s \
+	ft_bzero.s \
+	ft_cat.s \
+	ft_isalnum.s \
+	ft_isalpha.s \
+	ft_isascii.s \
+	ft_isdigit.s \
+	ft_isprint.s \
+	ft_memcpy.s \
+	ft_memset.s \
+	ft_strcat.s \
+	ft_strdup.s \
+	ft_strlen.s \
+	ft_tolower.s \
+	ft_toupper.s
+
+SRCO =	${SRC:.s=.o}
+
+${NAME}:  
+	 nasm -o ${SRCO} ${SRC}
+	 nasm -o libft.o ${SRCO}
+	 ld -o libft ${SRCO}
+
+all: ${NAME}
 
 clean : 
-	rm -fv ft_puts.o
+	rm -fv ${SRCO}
 
 fclean: clean
-	rm -fv ft_puts
+	rm -fv ${NAME}
+
+re : clean fclean all
