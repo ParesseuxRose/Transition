@@ -42,12 +42,6 @@ SRC = ft_toupper.c \
       ft_memchr.c \
       ft_memccpy.c \
       ft_memalloc.c \
-      ft_lstnew.c \
-      ft_lstmap.c \
-      ft_lstiter.c \
-      ft_lstdelone.c \
-      ft_lstdel.c \
-      ft_lstadd.c \
       ft_itoa.c \
       ft_isprint.c \
       ft_isdigit.c \
@@ -55,7 +49,13 @@ SRC = ft_toupper.c \
       ft_isalpha.c \
       ft_isalnum.c \
       ft_bzero.c \
-      ft_atoi.c
+      ft_atoi.c \
+      ft_lstdelone.c \
+      ft_lstnew.c \
+      ft_lstmap.c \
+      ft_lstdel.c \
+      ft_lstadd.c \
+      ft_lstiter.c 
 
 SRCO = ${SRC:.c=.o}
 
@@ -71,10 +71,9 @@ ${NAME}:
 	ranlib ${NAME}
 
 
-so :
-	gcc -shared libft.so $(SRC)
-	ar rc libft.so ${SRCO}
-	ranlib libft.so
+so:
+	gcc -c -Wall -Werror -Wextra -fpic $(SRC)
+	gcc -shared -o libft.so ${SRCO}
 
 clean:
 	/bin/rm -f ${SRCO}

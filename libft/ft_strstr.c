@@ -2,40 +2,26 @@
 
 char	*ft_strstr(const char *str, const char *to_find)
 {
-	int	i;
-	int	stop;
-	int	j;
-	char	*strstr;
+	char	*s1;
+	char	*s2;
 
-
-	stop = 1;
-	i = 0;
-	if ((strstr = (char*)malloc(sizeof(strstr) * ft_strlen(str) + 1)) == NULL)
-		return (0);
-	while (stop)
+	if (!*to_find)
+		return ((void *)str);
+	while (*str)
 	{
-		stop = 0;
-		j = 0;
-		while (str[i] != to_find[j] && str[i] != '\0')
+		if (*str == *to_find)
 		{
-			i++;
+			s1 = (void *)str +1;
+			s2 = (void *)to_find+1;
+			while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+			{
+				s2++;
+				s1++;
+			}
+			if (!*s2)
+				return ((void *)s1);
 		}
-		while (str[i] == to_find[j] && to_find[j] != '\0' && str[i] != '\0')
-		{
-			strstr[j] = str[i];
-			i++;
-			j++;
-		}
-		if (*to_find != '\0')
-		{
-			stop = 1;
-			j = 0;
-		}
-		else
-		{
-			strstr[j] = '\0';
-			return (strstr);
-		}
+		s1++;
 	}
-	return (strstr);
+	return (0);
 }

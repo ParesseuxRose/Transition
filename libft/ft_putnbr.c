@@ -3,15 +3,11 @@
 
 void	ft_putnbr(int nb)
 {
-	size_t i;
-
-	if (nb < 0)
-	{
+	long	i;
+	
+	i = nb;
+	if (nb < 0 && (i = -nb))
 		ft_putchar('-');
-		i = -nb;
-	}
-	else
-		i = nb;
 	if (i > 9)
 		ft_putnbr(nb / 10);
 	ft_putchar(nb % 10 + '0');
